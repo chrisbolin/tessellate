@@ -1,26 +1,13 @@
-# Bugs
-- Non-chrome
-  - select chrome 3d icky
-  - no "color" input
-  - keyboard events don't work
-  - slow af
-- Undo can change selection, menu state :(
-- hook up to browser undo/redo
+# Definitely
 - tiny router
   - hash/url should be state-derived
   - e.g. undo doesn't change hash
 
-# Features
-- welcome / help
-- clear instructions on menu hiding
-
-
-# Wants
-- redesign menu
+# Maybe
+- performance audit
+- "loading" animation.
 - eslint
 - export to svg
-
-
-# Current
-
-- ...
+- shorter urls. options:
+  - firebase
+  - url compression
