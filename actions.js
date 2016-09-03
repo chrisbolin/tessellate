@@ -10,6 +10,7 @@ const names = [
   "EDIT_ELEMENT",
   "ADD_ELEMENT",
   "REORDER_ELEMENT",
+  "LOCATION_CHANGE",
   "UNDO",
   "REDO",
 ];

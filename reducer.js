@@ -1,3 +1,4 @@
+import { getElementsFromHash } from "./persist";
 import actions from "./actions";
 
 const editElement = (state, editor) => {
@@ -161,6 +162,12 @@ export default (state, action) => {
         ...state,
         dragging: false,
         selectedIndex: null,
+      };
+
+    case actions.LOCATION_CHANGE:
+      return {
+        ...state,
+        elements: getElementsFromHash(action.href)
       };
 
     default:

@@ -85,12 +85,13 @@ export const updateHash = (elements) => {
   location.hash = encode(elements);
 };
 
-export const getElementsFromHash = () => {
+export const getElementsFromHash = (href) => {
   try {
     // could fail if
     // 1. no hash (common)
     // 2. malformed hash (uncommon)
-    const encodedElements = location.hash.substr(1);
+    href = href || location.href;
+    const encodedElements = href.split("#")[1];
     return decode(encodedElements);
   } catch (e) {
     location.hash = "";
