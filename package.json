@@ -1,0 +1,40 @@
+{
+  "name": "tessellate",
+  "version": "1.0.0",
+  "description": "bolin.co/tessellate",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p --progress",
+    "start": "webpack-dev-server --inline",
+    "prod": "python -m SimpleHTTPServer"
+  },
+  "author": "chrisbolin",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-es2016": "^6.11.3",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.13.0",
+    "css-loader": "^0.24.0",
+    "eslint": "^3.4.0",
+    "node-sass": "^3.8.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.0"
+  },
+  "dependencies": {
+    "keycode": "^2.1.4",
+    "react": "^15.3.1",
+    "react-addons-perf": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2"
+  }
+}
