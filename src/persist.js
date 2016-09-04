@@ -64,7 +64,7 @@ const truncateDigits = (string) => (
 
 const encode = (elements) => {
   const elementsCopy = [...elements];
-  return '#' + encodeURIComponent(
+  return encodeURIComponent(
     replaceToEncode(
       truncateDigits(JSON.stringify(elementsCopy).toLowerCase())
     )
@@ -129,7 +129,11 @@ const defaultElements = [
 // exports //
 
 export const updateHash = (elements) => {
-  history.replace(encode(elements));
+  history.replace(
+    location.pathname
+    + "#"
+    + encode(elements)
+  );
 };
 
 export const getElementsFromHash = (href) => {
