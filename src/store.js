@@ -1,4 +1,4 @@
-import * as Redux from "redux";
+import { createStore, compose, applyMiddleware } from "redux";
 
 import reducer from "./reducer";
 import actions from "./actions";
@@ -6,11 +6,15 @@ import { undoable } from "./undo";
 import { updateHash, getElementsFromHash } from "./persist";
 
 const initialState = {
-  lastPosition: null,
-  selectedIndex: null,
-  showMenu: true,
-  dragging: false,
-  elements: getElementsFromHash(),
+  past: [],
+  present: {
+    lastPosition: null,
+    selectedIndex: null,
+    showMenu: true,
+    dragging: false,
+    elements: getElementsFromHash(),
+  },
+  future: []
 };
 
 const filterUndo = (action) => {
@@ -33,32 +37,34 @@ const mergeUndoStates = (currentState, undoState) => {
   };
 };
 
-const makeLogger = reducer => {
-  if (location.hostname === "localhost") {
-    return (state, action) => {
-      console.group(action.type);
-      console.log(state);
-      console.log(action);
-      const newState = reducer(state, action);
-      console.log(newState);
-      console.groupEnd();
+const finalReducer = undoable(reducer, {
+  filter: filterUndo,
+  onUpdate: (state) => updateHash(state.elements),
+  merge: mergeUndoStates,
+});
 
-      return newState;
-    };
-  } else {
-    return reducer;
-  }
-};
+const useDevTools = !!window.devToolsExtension;
+const useLogger = !useDevTools && location.hostname === "localhost";
 
-export default Redux.createStore(
-  undoable(makeLogger(reducer), {
-    filter: filterUndo,
-    onUpdate: (state) => updateHash(state.elements),
-    merge: mergeUndoStates,
-  }),
-  {
-    past: [],
-    present: initialState,
-    future: []
+const logger = store => next => action => {
+  let result = next(action);
+  if (useLogger) {
+    console.group(action.type);
+    console.log(store.getState());
+    console.groupEnd();
   }
+  return result;
+}
+
+const addDevTools = () => (
+  useDevTools ? window.devToolsExtension() : f => f
+);
+
+export default createStore(
+  finalReducer,
+  initialState,
+  compose(
+    applyMiddleware(logger),
+    addDevTools()
+  )
 );
