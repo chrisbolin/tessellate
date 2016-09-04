@@ -3,12 +3,15 @@ import React from "react";
 import ElementMenuItem from "./element-menu-item";
 import Links from "./links";
 import Signature from "./signature";
+import Link from "./link";
 
 export default class Menu extends React.Component {
   renderAbout() {
     return (
       <div className="about">
-        <h1>Tessellate</h1>
+        <h1>
+          <Link href="#">Tessellate</Link>
+        </h1>
         <p>
           Tessellate is interactive art that explores repetition.
           Drag, re-size, rotate, remove, color, and re-order the shapes.

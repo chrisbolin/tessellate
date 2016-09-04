@@ -4,64 +4,12 @@ import actions from "./actions";
 import { undoable } from "./undo";
 import { updateHash, getElementsFromHash } from "./persist";
 
-const defaultElements = [
-  {
-    "type": "rect",
-    "width": "2",
-    "height": "17",
-    "fill": "#ffc0cb",
-    "translate": [
-      2.855,
-      -1.88
-    ],
-    "rotate": "-58"
-  },
-  {
-    "type": "rect",
-    "width": "2",
-    "height": "19",
-    "fill": "#a4b3ff",
-    "translate": [
-      7.083,
-      3.601
-    ],
-    "rotate": "-56"
-  },
-  {
-    "type": "rect",
-    "width": "2",
-    "height": "17",
-    "fill": "#c8fbc3",
-    "translate": [
-      8.285,
-      -1.044
-    ],
-    "rotate": "-64"
-  },
-  {
-    "type": "rect",
-    "width": "2",
-    "height": "18",
-    "fill": "#fbc8fe",
-    "translate": [
-      16.376,
-      7.38
-    ],
-    "rotate": "-66"
-  }
-];
-
-
-const getInitialElements = () => {
-  return getElementsFromHash() || defaultElements;
-}
-
 const initialState = {
   lastPosition: null,
   selectedIndex: null,
   showMenu: true,
   dragging: false,
-  elements: getInitialElements(),
+  elements: getElementsFromHash(),
 };
 
 const filterUndo = (action) => {

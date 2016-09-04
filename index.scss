@@ -4,6 +4,7 @@ $body-font: "Work Sans", sans-serif;
 $border: 2px solid #ddd;
 $highlight-color: #ddd;
 $bright-color: pink;
+$simple-transition: all 0.2s ease-out;
 
 body {
   margin: 0;
@@ -19,6 +20,14 @@ h1 {
   font-size: 65px;
   line-height: 0;
   margin: 55px 0;
+  transition: $simple-transition;
+  &:hover {
+    color: $bright-color;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 p {
@@ -30,7 +39,7 @@ p {
     border-bottom: 2px solid black;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.2s ease-out;
+    transition: $simple-transition;
     &:hover {
       color: $bright-color;
       border-bottom: 2px solid $bright-color;
