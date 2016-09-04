@@ -1,4 +1,4 @@
-// set up //
+import { history } from "./location";
 
 // decoded -> encoded
 const TARGETS = `
@@ -64,7 +64,7 @@ const truncateDigits = (string) => (
 
 const encode = (elements) => {
   const elementsCopy = [...elements];
-  return encodeURIComponent(
+  return '#' + encodeURIComponent(
     replaceToEncode(
       truncateDigits(JSON.stringify(elementsCopy).toLowerCase())
     )
@@ -129,7 +129,7 @@ const defaultElements = [
 // exports //
 
 export const updateHash = (elements) => {
-  location.hash = encode(elements);
+  history.replace(encode(elements));
 };
 
 export const getElementsFromHash = (href) => {
@@ -137,11 +137,10 @@ export const getElementsFromHash = (href) => {
     // could fail if
     // 1. no hash (common)
     // 2. malformed hash (uncommon)
-    href = href || location.href;
+    href = href || history.getCurrentLocation().hash;
     const encodedElements = href.split("#")[1];
     return decode(encodedElements);
   } catch (e) {
-    location.hash = "";
     return defaultElements;
   }
 };

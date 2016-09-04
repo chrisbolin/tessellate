@@ -1,4 +1,5 @@
 import * as Redux from "redux";
+
 import reducer from "./reducer";
 import actions from "./actions";
 import { undoable } from "./undo";
@@ -33,16 +34,20 @@ const mergeUndoStates = (currentState, undoState) => {
 };
 
 const makeLogger = reducer => {
-  return (state, action) => {
-    console.group(action.type);
-    console.log(state);
-    console.log(action);
-    const newState = reducer(state, action);
-    console.log(newState);
-    console.groupEnd();
+  if (location.hostname === "localhost") {
+    return (state, action) => {
+      console.group(action.type);
+      console.log(state);
+      console.log(action);
+      const newState = reducer(state, action);
+      console.log(newState);
+      console.groupEnd();
 
-    return newState;
-  };
+      return newState;
+    };
+  } else {
+    return reducer;
+  }
 };
 
 export default Redux.createStore(

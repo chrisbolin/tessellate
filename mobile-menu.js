@@ -1,6 +1,5 @@
 import React from "react";
 
-import Link from "./link";
 import Links from "./links";
 import Signature from "./signature";
 
@@ -9,7 +8,7 @@ export default class MobileMenu extends React.Component {
     return (
       <div className={`mobile-menu ${this.props.showMenu ? "" : "hidden"}`}>
         <h1>
-          <Link href="#">Tessellate</Link>
+          <a href="#">Tessellate</a>
         </h1>
         <p>
           Tessellate is interactive art that explores repetition.

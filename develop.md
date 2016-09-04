@@ -1,6 +1,5 @@
 # Definitely
-- BUG: IE doesn't have Array.prototype.fill
-- BUG: undo doesn't change hash
+- ...
 
 # Maybe
 - performance audit
