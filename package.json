@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p --progress",
+    "version": "npm run build && git add -A .",
     "start": "export NODE_ENV='development'; webpack-dev-server --inline",
     "prod": "python -m SimpleHTTPServer"
   },

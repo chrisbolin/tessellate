@@ -13,3 +13,5 @@ ReactDOM.render(
 
 startListening();
 setupPerf();
+
+console.info("TESSELLATE", VERSION);
