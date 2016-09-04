@@ -83,7 +83,7 @@ const hashMiddleware = store => next => action => {
 
 // EXPORT //
 
-export default createStore(
+const store = createStore(
   undoableReducer,
   initialState,
   compose(
@@ -91,3 +91,6 @@ export default createStore(
     addDevTools()
   )
 );
+
+export default store;
+window._store = store;
