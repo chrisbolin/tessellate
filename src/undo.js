@@ -1,5 +1,5 @@
 export function undoable(reducer, options) {
-  // options: { merge, filter, onUpdate }
+  // options: { merge, filter }
   // Call the reducer with empty action to populate the initial state
   const initialState = {
     past: [],
@@ -44,7 +44,6 @@ export function undoable(reducer, options) {
         const newPresent = reducer(present, action);
 
         if (options.filter(action)) {
-          options.onUpdate(newPresent);
           return {
             past: [ ...past, present ],
             present: newPresent,
