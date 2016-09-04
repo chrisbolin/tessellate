@@ -18,6 +18,7 @@ const getPosition = (event) => {
 
 const mapStateToProps = state => ({
   ...state.present,
+  ...state.performance,
   canUndo: !!state.past.length,
   canRedo: !!state.future.length
 });

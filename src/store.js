@@ -1,7 +1,7 @@
 import { createStore, compose, applyMiddleware } from "redux";
 
-import reducer from "./reducer";
-import actions from "./actions";
+import combinedReducer from "./combinedReducer";
+import actions, { undoableActions, persistedActions } from "./actions";
 import { undoable } from "./undo";
 import { updateHash, getStateFromHash } from "./persist";
 
@@ -19,35 +19,6 @@ const initialState = {
   },
   future: []
 };
-
-// UNDO //
-
-const typesToRecord = [
-  actions.EDIT_ELEMENT,
-  actions.ADD_ELEMENT,
-  actions.DELETE_ELEMENT,
-  actions.NUDGE_ELEMENT,
-  actions.REORDER_ELEMENT,
-  actions.START_DRAG,
-  actions.EDIT_BACKGROUND
-];
-
-const filterUndo = (action) => {
-  return typesToRecord.indexOf(action.type) !== -1;
-};
-
-const mergeUndoStates = (currentState, undoState) => {
-  return {
-    ...currentState,
-    elements: undoState.elements,
-    backgroundColor: undoState.backgroundColor
-  };
-};
-
-const undoableReducer = undoable(reducer, {
-  filter: filterUndo,
-  merge: mergeUndoStates,
-});
 
 // DEVTOOLS + LOGGING //
 
@@ -72,13 +43,7 @@ const addDevTools = () => (
 
 const hashMiddleware = store => next => action => {
   let result = next(action);
-  const typesToPersist = [
-    ...typesToRecord,
-    actions.END_SELECT,
-    actions.UNDO,
-    actions.REDO
-  ];
-  if (typesToPersist.indexOf(action.type) !== -1) {
+  if (persistedActions.indexOf(action.type) !== -1) {
     updateHash(store.getState().present);
   }
   return result;
@@ -87,7 +52,7 @@ const hashMiddleware = store => next => action => {
 // EXPORT //
 
 const store = createStore(
-  undoableReducer,
+  combinedReducer,
   initialState,
   compose(
     applyMiddleware(loggerMiddleware, hashMiddleware),

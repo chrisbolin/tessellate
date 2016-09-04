@@ -99,8 +99,10 @@ export default class App extends React.Component {
               key={index}
               index={index}
               base={this.base}
+              selectedIndex={this.props.selectedIndex}
               elements={this.props.elements}
               onMouseDown={this.handleElementMouseDown.bind(this)}
+              forceElementUpdate={this.props.forceElementUpdate}
               />
           ))}
         </svg>

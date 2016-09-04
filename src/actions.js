@@ -18,7 +18,33 @@ const names = [
 
 // create an object with identical keys/values
 // { "INIT": "INIT", ...}
-export default names.reduce((actions, name) => {
+const actions = names.reduce((actions, name) => {
   actions[name] = name
   return actions;
 }, {});
+
+export default actions;
+
+export const undoableActions = [
+  actions.EDIT_ELEMENT,
+  actions.ADD_ELEMENT,
+  actions.DELETE_ELEMENT,
+  actions.NUDGE_ELEMENT,
+  actions.REORDER_ELEMENT,
+  actions.START_DRAG,
+  actions.EDIT_BACKGROUND
+];
+
+export const forceElementUpdateActions = [
+  actions.LOCATION_CHANGE,
+  actions.REORDER_ELEMENT,
+  actions.UNDO,
+  actions.REDO,
+];
+
+export const persistedActions = [
+  ...undoableActions,
+  actions.END_SELECT,
+  actions.UNDO,
+  actions.REDO
+];
