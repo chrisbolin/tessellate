@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p --progress",
-    "start": "webpack-dev-server --inline",
+    "start": "export NODE_ENV='development'; webpack-dev-server --inline",
     "prod": "python -m SimpleHTTPServer"
   },
   "author": "chrisbolin",
