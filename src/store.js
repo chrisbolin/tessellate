@@ -69,7 +69,12 @@ const addDevTools = () => (
 
 const hashMiddleware = store => next => action => {
   let result = next(action);
-  const typesToPersist = [...typesToRecord, actions.END_SELECT];
+  const typesToPersist = [
+    ...typesToRecord,
+    actions.END_SELECT,
+    actions.UNDO,
+    actions.REDO
+  ];
   if (typesToPersist.indexOf(action.type) !== -1) {
     updateHash(store.getState().present.elements);
   }
