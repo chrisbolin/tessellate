@@ -89,6 +89,7 @@ export default class App extends React.Component {
       <div className="artboard">
         <svg
           viewBox={this.viewBox}
+          style={{ backgroundColor: this.props.backgroundColor }}
           onMouseUp={this.props.endSelect}
           onMouseDown={this.props.deselect}
           onMouseMove={this.props.moveMouse}
@@ -131,6 +132,8 @@ export default class App extends React.Component {
               moveDown={this.props.moveDown}
               canUndo={this.props.canUndo}
               canRedo={this.props.canRedo}
+              editBackground={this.props.editBackground}
+              backgroundColor={this.props.backgroundColor}
             />
 
         }

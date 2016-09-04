@@ -1,4 +1,4 @@
-import { getElementsFromHash } from "./persist";
+import { getStateFromHash } from "./persist";
 import actions from "./actions";
 
 const editElement = (state, editor) => {
@@ -120,6 +120,12 @@ export default (state, action) => {
         dragging: true,
       };
 
+    case actions.EDIT_BACKGROUND:
+      return {
+        ...state,
+        backgroundColor: action.backgroundColor
+      }
+
     case actions.SELECT_ELEMENT:
       return {
         ...state,
@@ -167,7 +173,7 @@ export default (state, action) => {
     case actions.LOCATION_CHANGE:
       return {
         ...state,
-        elements: getElementsFromHash(action.href)
+        ...getStateFromHash(action.href)
       };
 
     default:

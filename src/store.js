@@ -3,7 +3,7 @@ import { createStore, compose, applyMiddleware } from "redux";
 import reducer from "./reducer";
 import actions from "./actions";
 import { undoable } from "./undo";
-import { updateHash, getElementsFromHash } from "./persist";
+import { updateHash, getStateFromHash } from "./persist";
 
 // STATE //
 
@@ -14,7 +14,8 @@ const initialState = {
     selectedIndex: null,
     showMenu: true,
     dragging: false,
-    elements: getElementsFromHash(),
+    backgroundColor: "#000000",
+    ...getStateFromHash(),
   },
   future: []
 };
@@ -28,6 +29,7 @@ const typesToRecord = [
   actions.NUDGE_ELEMENT,
   actions.REORDER_ELEMENT,
   actions.START_DRAG,
+  actions.EDIT_BACKGROUND
 ];
 
 const filterUndo = (action) => {
@@ -37,7 +39,8 @@ const filterUndo = (action) => {
 const mergeUndoStates = (currentState, undoState) => {
   return {
     ...currentState,
-    elements: undoState.elements
+    elements: undoState.elements,
+    backgroundColor: undoState.backgroundColor
   };
 };
 
@@ -76,7 +79,7 @@ const hashMiddleware = store => next => action => {
     actions.REDO
   ];
   if (typesToPersist.indexOf(action.type) !== -1) {
-    updateHash(store.getState().present.elements);
+    updateHash(store.getState().present);
   }
   return result;
 };

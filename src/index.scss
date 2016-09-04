@@ -118,6 +118,7 @@ input {
 
   &[type=color] {
     width: 66px;
+    border: $border;
     &::-webkit-color-swatch-wrapper {
       padding: 0;
     }
@@ -225,5 +226,9 @@ input {
     &.selected {
       background-color: #E0E0E0;
     }
+  }
+
+  .background {
+    padding-left: 12px;
   }
 }

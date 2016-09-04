@@ -91,6 +91,12 @@ const mapDispatchToProps = dispatch => ({
       size
     });
   },
+  editBackground(backgroundColor) {
+    dispatch({
+      type: actions.EDIT_BACKGROUND,
+      backgroundColor
+    });
+  },
   editSelectedElement(edit) {
     dispatch({
       type: actions.EDIT_ELEMENT,

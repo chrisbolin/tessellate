@@ -1,5 +1,5 @@
 # Definitely
-- background color
+- ...
 
 # Maybe
 - performance audit

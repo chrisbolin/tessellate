@@ -38,6 +38,20 @@ export default class Menu extends React.Component {
       </div>
     );
   }
+  renderBackgroundOptions() {
+    return (
+      <div className="list-item element background">
+        <div className="group">Background</div>
+        <div className="group">
+          <input
+            type="color"
+            value={this.props.backgroundColor}
+            onChange={(event) => this.props.editBackground(event.target.value)}
+          />
+        </div>
+      </div>
+    );
+  }
   renderElements() {
     return (
       <div className="main">
@@ -57,6 +71,7 @@ export default class Menu extends React.Component {
             />
           )).reverse() // show last rendered on top, for z-indexing
         }
+        {this.renderBackgroundOptions()}
       </div>
     );
   }

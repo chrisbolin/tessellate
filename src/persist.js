@@ -10,6 +10,8 @@ const TARGETS = `
 "fill":
 "translate":
 "rotate":
+"bgcolor":
+"elements":
 "ellipse"
 "rx"
 "ry"
@@ -63,42 +65,49 @@ const truncateDigits = (string) => (
 
 // encoding / decoding //
 
-const encode = (elements) => {
-  const elementsCopy = [...elements];
+const encode = (state) => {
+  const persistableState = {
+    elements: state.elements,
+    bgcolor: state.backgroundColor
+  };
   return encodeURIComponent(
     replaceToEncode(
-      truncateDigits(JSON.stringify(elementsCopy).toLowerCase())
+      truncateDigits(JSON.stringify(persistableState).toLowerCase())
     )
   );
 };
 
 const decode = (encoded) => {
-  return JSON.parse(
+  const decoded = JSON.parse(
     replaceToDecode(
       decodeURIComponent(encoded)
     )
   );
+  return {
+    elements: decoded.elements,
+    backgroundColor: decoded.bgcolor,
+  };
 };
 
 // exports //
 
-export const updateHash = (elements) => {
+export const updateHash = (state) => {
   history.replace(
     location.pathname
     + "#"
-    + encode(elements)
+    + encode(state)
   );
 };
 
-export const getElementsFromHash = (href) => {
+export const getStateFromHash = (href) => {
   try {
     // could fail if
     // 1. no hash (common)
     // 2. malformed hash (uncommon)
     href = href || history.getCurrentLocation().hash;
-    const encodedElements = href.split("#")[1];
-    return decode(encodedElements);
+    const encodedState = href.split("#")[1];
+    return decode(encodedState);
   } catch (e) {
-    return presets.FourColoredAngledBars.elements;
+    return presets.FourColoredAngledBars;
   }
 };
