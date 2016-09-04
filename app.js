@@ -9,7 +9,7 @@ import MobileMenu from "./mobile-menu";
 
 // HELPERS //
 
-const makeArray = (number) => Array(number).fill(1);
+const makeArray = (number) => Array.apply(null, Array(number));
 
 export default class App extends React.Component {
   constructor(props) {
