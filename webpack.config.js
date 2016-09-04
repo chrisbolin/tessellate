@@ -1,4 +1,10 @@
+const webpack = require("webpack");
+
 const EXCLUDE = /node_modules/;
+
+new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+}),
 
 module.exports = {
   entry: ["./index.js", "./index.scss"],
@@ -22,5 +28,10 @@ module.exports = {
       }
     ]
   },
-  watch: true
-}
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+    })
+  ],
+  watch: false
+};
