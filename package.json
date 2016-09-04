@@ -1,6 +1,6 @@
 {
   "name": "tessellate",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "bolin.co/tessellate",
   "main": "index.js",
   "scripts": {
