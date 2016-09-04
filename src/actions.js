@@ -35,6 +35,13 @@ export const undoableActions = [
   actions.EDIT_BACKGROUND
 ];
 
+export const persistedActions = [
+  ...undoableActions,
+  actions.END_SELECT,
+  actions.UNDO,
+  actions.REDO
+];
+
 export const forceElementUpdateActions = [
   actions.LOCATION_CHANGE,
   actions.REORDER_ELEMENT,
@@ -42,9 +49,7 @@ export const forceElementUpdateActions = [
   actions.REDO,
 ];
 
-export const persistedActions = [
-  ...undoableActions,
-  actions.END_SELECT,
-  actions.UNDO,
-  actions.REDO
+export const skipMenuUpdateActions = [
+  actions.DRAG_ELEMENT,
+  actions.NUDGE_ELEMENT
 ];

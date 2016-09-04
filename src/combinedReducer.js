@@ -1,9 +1,11 @@
 import { createStore, compose, applyMiddleware } from "redux";
 
 import reducer from "./reducer";
-import actions, { undoableActions, forceElementUpdateActions } from "./actions";
 import { undoable } from "./undo";
 import { updateHash, getStateFromHash } from "./persist";
+import actions, {
+  undoableActions, forceElementUpdateActions, skipMenuUpdateActions
+} from "./actions";
 
 // STATE //
 
@@ -46,7 +48,8 @@ const performanceReducer = (reducer) => {
     return {
       ...reducer(state, action),
       performance: {
-        forceElementUpdate: (forceElementUpdateActions.indexOf(action.type) !== -1)
+        forceElementUpdate: (forceElementUpdateActions.indexOf(action.type) !== -1),
+        skipMenuUpdate: (skipMenuUpdateActions.indexOf(action.type) !== -1)
       }
     };
   };

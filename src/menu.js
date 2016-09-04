@@ -97,6 +97,9 @@ export default class Menu extends React.Component {
       </div>
     );
   }
+  shouldComponentUpdate(nextProps) {
+    return !nextProps.skipMenuUpdate;
+  }
   render() {
     return (
       <div className={`menu ${!this.props.showMenu ? "hidden" : ""}`}>
