@@ -1,5 +1,6 @@
 # Definitely
-- ...
+- background color
+- bug: undo doesn't update URL
 
 # Maybe
 - performance audit

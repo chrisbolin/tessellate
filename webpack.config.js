@@ -7,9 +7,9 @@ new webpack.DefinePlugin({
 }),
 
 module.exports = {
-  entry: ["./index.js", "./index.scss"],
+  entry: ["./src/index.js", "./src/index.scss"],
   output: {
-    filename: "bundle.js"
+    filename: "dist/bundle.js"
   },
   module: {
     loaders: [
