@@ -137,6 +137,7 @@ export default class App extends React.Component {
               editBackground={this.props.editBackground}
               backgroundColor={this.props.backgroundColor}
               skipMenuUpdate={this.props.skipMenuUpdate}
+              clearArtboard={this.props.clearArtboard}
             />
 
         }

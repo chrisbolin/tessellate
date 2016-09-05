@@ -79,6 +79,7 @@ export default class Menu extends React.Component {
     return (
       <div className="actions">
         <div className="button" onClick={this.props.addElement}> + </div>
+        <div className="button" onClick={this.props.clearArtboard}> ✷ </div>
         <div
           className={`button ${!this.props.canUndo ? "disabled" : ""}`}
           onClick={this.props.undo}

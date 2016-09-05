@@ -30,6 +30,9 @@ const mapDispatchToProps = dispatch => ({
   redo() {
     dispatch({ type: actions.REDO });
   },
+  clearArtboard() {
+    dispatch({ type: actions.CLEAR_ARTBOARD });
+  },
   toggleMenu() {
     dispatch({ type: actions.TOGGLE_MENU });
   },

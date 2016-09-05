@@ -12,6 +12,7 @@ const names = [
   "REORDER_ELEMENT",
   "LOCATION_CHANGE",
   "EDIT_BACKGROUND",
+  "CLEAR_ARTBOARD",
   "UNDO",
   "REDO",
 ];
@@ -26,6 +27,7 @@ const actions = names.reduce((actions, name) => {
 export default actions;
 
 export const undoableActions = [
+  actions.CLEAR_ARTBOARD,
   actions.EDIT_ELEMENT,
   actions.ADD_ELEMENT,
   actions.DELETE_ELEMENT,

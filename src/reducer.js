@@ -50,6 +50,9 @@ export default (state, action) => {
     case actions.TOGGLE_MENU:
       return { ...state, showMenu: !state.showMenu };
 
+    case actions.CLEAR_ARTBOARD:
+      return { ...state, elements: [] };
+
     case actions.ADD_ELEMENT:
       const newElement = {
         ...(state.elements[state.selectedIndex] || defaultElement)
