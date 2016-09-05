@@ -1,5 +1,5 @@
 import Perf from "react-addons-perf";
 
-export const setupPerf = () => {
+export default () => {
   window.Perf = Perf;
 };
