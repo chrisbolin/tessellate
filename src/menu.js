@@ -24,11 +24,9 @@ export default class Menu extends React.Component {
           If an element is selected, all new elements are duplicates of it.
         </p>
         <p>
-          This is a toy. It works best on OSX Chrome. Sorry.
-          If {"you're"} curious,
-          the shapes are SVG elements rendered with React.
-          You can also
-          on <a href="https://github.com/chrisbolin/tessellate" target="_blank">
+          This works best on OS X Chrome.
+          If you{`'`}re
+          curious about the implementation, <a href="https://github.com/chrisbolin/tessellate" target="_blank">
             check out the source
           </a>.
         </p>
