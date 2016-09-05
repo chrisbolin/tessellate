@@ -178,5 +178,279 @@ export default {
       }
     ],
     "backgroundColor": "#ffffff"
-  }
+  },
+  YellowBubbles: {
+    "elements": [
+      {
+        "type": "ellipse",
+        "width": "2",
+        "height": "2",
+        "fill": "#e1d900",
+        "translate": [
+          1.34,
+          1.161
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "3",
+        "height": "3",
+        "fill": "#e1d900",
+        "translate": [
+          4.825,
+          5.808
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "2",
+        "height": "2",
+        "fill": "#e1d900",
+        "translate": [
+          -4.557,
+          4.557
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "3",
+        "height": "3",
+        "fill": "#e1d900",
+        "translate": [
+          2.9489445933869525,
+          11.438020554066123
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "2",
+        "height": "2",
+        "fill": "#e1d900",
+        "translate": [
+          -2.323,
+          2.323
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "2",
+        "height": "2",
+        "fill": "#e1d900",
+        "translate": [
+          -5.361,
+          2.859
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "4",
+        "height": "4",
+        "fill": "#e1d900",
+        "translate": [
+          3.932,
+          8.668
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "2",
+        "height": "2",
+        "fill": "#e1d900",
+        "translate": [
+          1.1621170688114386,
+          -1.339903485254692
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "2",
+        "height": "2",
+        "fill": "#e1d900",
+        "translate": [
+          4.289,
+          3.753
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "3",
+        "height": "3",
+        "fill": "#e1d900",
+        "translate": [
+          7.953172475424488,
+          12.778482573726539
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "4",
+        "height": "4",
+        "fill": "#e1d900",
+        "translate": [
+          10.634,
+          13.851
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "3",
+        "height": "3",
+        "fill": "#e1d900",
+        "translate": [
+          1.966,
+          17.247
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "4",
+        "height": "4",
+        "fill": "#e1d900",
+        "translate": [
+          11.528,
+          20.107
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "3",
+        "height": "3",
+        "fill": "#e1d900",
+        "translate": [
+          -4.379026809651474,
+          8.399593386952638
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": "2",
+        "height": "2",
+        "fill": "#e1d900",
+        "translate": [
+          -3.3955236818588013,
+          -3.5740411081322616
+        ],
+        "rotate": 0
+      }
+    ],
+    "hash": "#QIVQAJSDO2MCO2MENe1d900MFV1U34S1U161PG0RSQAJSDO3MCO3MENe1d900MFV4U825S5U808PG0RSQAJSDO2MCO2MENe1d900MFV-4U557S4U557PG0RSQAJSDO3MCO3MENe1d900MFV2U948S11U438PG0RSQAJSDO2MCO2MENe1d900MFV-2U323S2U323PG0RSQAJSDO2MCO2MENe1d900MFV-5U361S2U859PG0RSQAJSDO4MCO4MENe1d900MFV3U932S8U668PG0RSQAJSDO2MCO2MENe1d900MFV1U162S-1U339PG0RSQAJSDO2MCO2MENe1d900MFV4U289S3U753PG0RSQAJSDO3MCO3MENe1d900MFV7U953S12U778PG0RSQAJSDO4MCO4MENe1d900MFV10U634S13U851PG0RSQAJSDO3MCO3MENe1d900MFV1U966S17U247PG0RSQAJSDO4MCO4MENe1d900MFV11U528S20U107PG0RSQAJSDO3MCO3MENe1d900MFV-4U379S8U399PG0RSQAJSDO2MCO2MENe1d900MFV-3U395S-3U574PG0RPHNfff37eOR"
+  },
+  LightCircles: {
+    "elements": [
+      {
+        "type": "ellipse",
+        "width": 4,
+        "height": 4,
+        "fill": "#ffffff",
+        "translate": [
+          -0.357462019660411,
+          1.0723860589812333
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": 4,
+        "height": 4,
+        "fill": "#ffffff",
+        "translate": [
+          1.5192135835567457,
+          4.915102770330654
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": 4,
+        "height": 4,
+        "fill": "#ffffff",
+        "translate": [
+          9.294012511170687,
+          2.6809651474530836
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": 4,
+        "height": 4,
+        "fill": "#ffffff",
+        "translate": [
+          9.294012511170687,
+          10.723860589812334
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": 4,
+        "height": 4,
+        "fill": "#ffffff",
+        "translate": [
+          4.825737265415548,
+          1.429848078641645
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": 4,
+        "height": 4,
+        "fill": "#ffffff",
+        "translate": [
+          4.468275245755138,
+          -4.468275245755137
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": 4,
+        "height": 4,
+        "fill": "#ffffff",
+        "translate": [
+          -1.8766756032171585,
+          -6.613047363717601
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": 4,
+        "height": 4,
+        "fill": "#ffffff",
+        "translate": [
+          -6.4343163538874,
+          -7.417336907953527
+        ],
+        "rotate": 0
+      },
+      {
+        "type": "ellipse",
+        "width": 4,
+        "height": 4,
+        "fill": "#ffffff",
+        "translate": [
+          0.5361930294906168,
+          -2.9490616621983925
+        ],
+        "rotate": 0
+      }
+    ],
+    "hash": "#QIVQAJSD4SC4SENffffffMFV-0U357S1U072PG0RSQAJSD4SC4SENffffffMFV1U519S4U915PG0RSQAJSD4SC4SENffffffMFV9U294S2U680PG0RSQAJSD4SC4SENffffffMFV9U294S10U723PG0RSQAJSD4SC4SENffffffMFV4U825S1U429PG0RSQAJSD4SC4SENffffffMFV4U468S-4U468PG0RSQAJSD4SC4SENffffffMFV-1U876S-6U613PG0RSQAJSD4SC4SENffffffMFV-6U434S-7U417PG0RSQAJSD4SC4SENffffffMFV0U536S-2U949PG0RPHNe5fc89OR"
+  },
 }
