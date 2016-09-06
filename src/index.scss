@@ -70,7 +70,7 @@ p {
   display: inline-block;
   cursor: pointer;
   vertical-align: bottom;
-  width: 53px;
+  width: 44px;
   text-align: center;
   &:hover {
     background-color: $highlight-color;
@@ -163,7 +163,7 @@ input {
 }
 
 .menu {
-  $menu-width: 615px;
+  $menu-width: 605px;
   $margin: 20px;
 
   font-size: 14px;
