@@ -41,6 +41,7 @@ export default class ElementMenuItem extends React.Component {
       >
       <div className="group">
           <Select
+            title="shape"
             value={element.type}
             onFocus={this.selectThisElement.bind(this)}
             onChange={this.handleTypeChange.bind(this)}
@@ -49,6 +50,7 @@ export default class ElementMenuItem extends React.Component {
         </div>
         <div className="group">
           <input
+            title="color"
             type="color"
             value={element.fill}
             onFocus={this.selectThisElement.bind(this)}
@@ -57,6 +59,7 @@ export default class ElementMenuItem extends React.Component {
         </div>
         <div className="group">
           <input
+            title="height"
             type="number"
             value={element.height}
             onFocus={this.selectThisElement.bind(this)}
@@ -64,6 +67,7 @@ export default class ElementMenuItem extends React.Component {
           />
           ⨯
           <input
+            title="width"
             type="number"
             value={element.width}
             onFocus={this.selectThisElement.bind(this)}
@@ -72,6 +76,7 @@ export default class ElementMenuItem extends React.Component {
         </div>
         <div className="group">
           <input
+            title="rotation"
             type="number"
             value={element.rotate}
             onFocus={this.selectThisElement.bind(this)}
@@ -81,12 +86,14 @@ export default class ElementMenuItem extends React.Component {
         </div>
         <div className="group">
           <div
+            title="move element up"
             className="button"
             onClick={this.props.moveUp}
           >
             △
           </div>
           <div
+            title="move element down"
             className="button"
             onClick={this.props.moveDown}
             style={{paddingTop: 6}}
@@ -94,6 +101,7 @@ export default class ElementMenuItem extends React.Component {
             ▽
           </div>
           <div
+            title="delete element"
             className="button"
             onClick={this.props.deleteElement}
           >

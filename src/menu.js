@@ -42,6 +42,7 @@ export default class Menu extends React.Component {
         <div className="group">Background</div>
         <div className="group">
           <input
+            title="background color"
             type="color"
             value={this.props.backgroundColor}
             onChange={(event) => this.props.editBackground(event.target.value)}
@@ -76,15 +77,17 @@ export default class Menu extends React.Component {
   renderActions() {
     return (
       <div className="actions">
-        <div className="button" onClick={this.props.addElement}> + </div>
-        <div className="button" onClick={this.props.clearArtboard}> ✷ </div>
+        <div title="add element" className="button" onClick={this.props.addElement}> + </div>
+        <div title="clear all elements" className="button" onClick={this.props.clearArtboard}> ✷ </div>
         <div
+          title="undo"
           className={`button ${!this.props.canUndo ? "disabled" : ""}`}
           onClick={this.props.undo}
         >
           ↰
         </div>
         <div
+          title="redo"
           className={`button ${!this.props.canRedo ? "disabled" : ""}`}
           onClick={this.props.redo}
         >

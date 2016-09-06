@@ -4,6 +4,7 @@ export default class Select extends React.Component {
   render() {
     return (
       <select
+        title={this.props.title}
         value={this.props.value}
         onFocus={(event) => this.props.onFocus(event.target.value)}
         onChange={(event) => this.props.onChange(event.target.value)}
