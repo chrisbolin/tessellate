@@ -85,8 +85,16 @@ export default class App extends React.Component {
   }
 
   renderArtboard() {
+    const style = {
+      position: "fixed",
+      width: "140vmax",
+      height: "140vmax",
+      top: "-20vmax",
+      left: "-20vmax"
+    };
+
     return (
-      <div className="artboard">
+      <div className="artboard" style={style}>
         <svg
           viewBox={this.viewBox}
           style={{ backgroundColor: this.props.backgroundColor }}
