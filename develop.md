@@ -2,6 +2,7 @@
 - ...
 
 # Maybe
+- "animate" using undo/redo history
 - "loading" animation.
 - eslint
 - export to svg
