@@ -1,6 +1,6 @@
 import store from "./store";
 
-const copyElements = () => {
+export const copyElements = () => {
   const elements = store.getState().present.elements;
   copy({
     elements,
@@ -10,8 +10,15 @@ const copyElements = () => {
   return true;
 };
 
-export default () => {
-  window.Tessellate = {
-    copyElements
-  };
+export const animate = () => {
+  const backward = !!store.getState().past.length;
+  const animationInterval = setInterval(() => {
+    if (backward && store.getState().past.length) {
+      store.dispatch({ type: "UNDO" });
+    } else if (!backward && store.getState().future.length) {
+      store.dispatch({ type: "REDO" });
+    } else {
+      clearInterval(animationInterval);
+    }
+  }, 30);
 };

@@ -6,7 +6,7 @@ import store from "./store";
 import { startListening } from "./location";
 
 import setupPerf from "./performance"
-import setupConsole from "./console"
+import * as Console from "./console"
 
 ReactDOM.render(
   <App store={store}/>,
@@ -15,6 +15,6 @@ ReactDOM.render(
 
 startListening();
 setupPerf();
-setupConsole();
+window.Tessellate = Console;
 
 console.info("TESSELLATE", VERSION);

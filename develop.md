@@ -2,9 +2,8 @@
 - ...
 
 # Maybe
-- "animate" using undo/redo history
-- "loading" animation.
-- eslint
+- "loading" animation - this seems to add extra time
+- eslint - get from formidable
 - export to svg
 - shorter urls. options:
   - firebase
