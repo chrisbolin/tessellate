@@ -47,6 +47,7 @@ export const persistedActions = [
 export const forceElementUpdateActions = [
   actions.LOCATION_CHANGE,
   actions.REORDER_ELEMENT,
+  actions.DELETE_ELEMENT,
   actions.UNDO,
   actions.REDO,
 ];
