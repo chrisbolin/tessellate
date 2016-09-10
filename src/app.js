@@ -50,7 +50,7 @@ export default class App extends React.Component {
     } else if (event.target.tagName === "INPUT") {
       return;
     // -- only catch these events if _not_ on an input -- //
-    } else if (keyName === "n") { // ADD NEW ELEMENT
+    } else if (keyName === "n" || keyName === "d") { // ADD NEW ELEMENT
       this.props.addElement();
     } else if (
       (['up', 'down', 'left', 'right'].indexOf(keyName) !== -1)
