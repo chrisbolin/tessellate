@@ -32,12 +32,21 @@ export default class ElementMenuItem extends React.Component {
     this.props.editor({width: event.target.value});
   }
 
+  componentDidUpdate(prevProps) {
+    if (!prevProps.selected && this.props.selected) {
+      if (this.element.scrollIntoViewIfNeeded) {
+        this.element.scrollIntoViewIfNeeded(); // unsupported in firefox and IE
+      }
+    }
+  }
+
   render() {
     const { element, selected } = this.props;
     return (
       <div
         className={`list-item element ${selected ? "selected" : ""}`}
         onMouseDown={this.selectThisElement.bind(this)}
+        ref={ (element) => this.element = element }
       >
       <div className="group">
           <Select
