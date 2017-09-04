@@ -16,34 +16,48 @@ export default class Element extends React.Component {
     };
 
     let elementProps;
+		let svgType;
 
     const baseProps = {
       fill: element.fill,
     };
 
-    if (element.type === "rect") {
-      elementProps = {
-        ...baseProps,
-        width: element.width,
-        height: element.height
-      };
-    } else if (element.type === "ellipse") {
-      elementProps = {
-        ...baseProps,
-        rx: element.width / 2,
-        ry: element.height / 2
-      };
-    }
+		switch (element.type) {
+			case "rect": {
+				svgType = "rect";
+	      elementProps = {
+	        width: element.width,
+	        height: element.height
+	      };
+				break;
+			}
+			case "ellipse": {
+				svgType = "ellipse";
+	      elementProps = {
+	        rx: element.width / 2,
+	        ry: element.height / 2
+	      };
+				break;
+			}
+			case "triangle": {
+				svgType = "polygon";
+				elementProps = {
+					points: `0,0 ${element.width / 2},${-element.height} ${element.width},0`
+				}
+				break;
+			}
+		}
 
     let transform = Object.keys(elementTransforms).map(key => (
       `${key}(${elementTransforms[key]})`
     )).join(' ');
 
     return React.createElement(
-      element.type,
+      svgType,
       {
         transform,
         onMouseDown,
+				...baseProps,
         ...elementProps
       }
     );

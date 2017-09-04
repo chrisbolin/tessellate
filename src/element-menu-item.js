@@ -5,6 +5,7 @@ import Select from "./select";
 const typeDisplayNames = {
   rect: "▭",
   ellipse: "◯",
+  triangle: "△",
 };
 
 export default class ElementMenuItem extends React.Component {
