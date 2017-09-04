@@ -134,25 +134,25 @@ input {
   top: 8vh;
   background-color: white;
   width: 100vw;
-  padding: 4vw 8vw;
+  padding: 4vmin 8vmin;
   box-sizing: border-box;
   transition: transform 0.3s ease-in-out;
 
   h1 {
-    font-size: 15.5vw;
+    font-size: 13.5vmin;
     margin: 0;
-    margin-bottom: -6vw;
+    margin-bottom: -6vmin;
     line-height: normal;
     font-weight: 100;
   }
 
   p {
-    font-size: 4vw;
-    line-height: 7vw;
+    font-size: 4vmin;
+    line-height: 7vmin;
   }
 
   &.hidden {
-    transform: translate3d(-100vmax, 20vmax, 0) rotate3d(0, 0, 1, -60deg);
+    transform: translate3d(-110vmax, 20vmax, 0) rotate3d(0, 0, 1, -60deg);
   }
 }
 
