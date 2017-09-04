@@ -2,6 +2,7 @@ import { history } from "./location";
 import presets from "./presets";
 
 // decoded -> encoded
+// always added new targets to the *end of TARGETS* so legacy saves don't break
 const TARGETS = `
 "type":
 "rect"
@@ -26,6 +27,7 @@ const TARGETS = `
 .
 [
 ]
+triangle
 `.trim().split("\n");
 
 const REPLACEMENTS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_~'!*()".split("");
@@ -35,11 +37,6 @@ if (TARGETS.length > REPLACEMENTS.length) {
     `Cannot encode. More targets (${TARGETS.length}) than replacements (${REPLACEMENTS.length}).`
   );
 }
-
-window._mapper = TARGETS.reduce((mapper, current, index) => {
-  mapper[REPLACEMENTS[index]] = TARGETS[index];
-  return mapper;
-}, {});
 
 // helpers //
 
