@@ -161,9 +161,8 @@ input {
   $margin: 20px;
 
   font-size: 14px;
-
   position: absolute;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   top: 0;
   bottom: 0;
   left: 20px;
@@ -205,7 +204,6 @@ input {
     padding: 15px 6px;
     transition: all 0.2s ease-out;
     cursor: pointer;
-    background-color: white;
 
     .group {
       margin: 0 8px;
