@@ -4,7 +4,7 @@ $body-font: "Work Sans", sans-serif;
 $border: 2px solid #ddd;
 $highlight-color: #ddd;
 $bright-color: pink;
-$simple-transition: all 0.2s ease-out;
+$simple-transition: 0.2s ease-out;
 
 body {
   margin: 0;
@@ -20,7 +20,7 @@ h1 {
   font-size: 65px;
   line-height: 0;
   margin: 55px 0;
-  transition: $simple-transition;
+  transition: color $simple-transition;
   &:hover {
     color: $bright-color;
   }
@@ -39,7 +39,7 @@ p {
     border-bottom: 2px solid black;
     text-decoration: none;
     cursor: pointer;
-    transition: $simple-transition;
+    transition: color $simple-transition;
     &:hover {
       color: $bright-color;
       border-bottom: 2px solid $bright-color;
@@ -60,7 +60,7 @@ p {
   margin: 0 5px;
   height: 40px;
   box-sizing: border-box;
-  transition: background-color 0.3s ease-out;
+  transition: background-color $simple-transition;
   display: inline-block;
   cursor: pointer;
   vertical-align: bottom;
@@ -202,7 +202,7 @@ input {
 
   .element {
     padding: 15px 6px;
-    transition: all 0.2s ease-out;
+    transition: background-color $simple-transition;
     cursor: pointer;
 
     .group {
